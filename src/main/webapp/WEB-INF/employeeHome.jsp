@@ -9,28 +9,34 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body style="margin: 10px;">
-<h3>Welcome, Enter The Employee Details</h3>
 <form:form method="POST" action="${pageContext.request.contextPath}/addEmployee" modelAttribute="employee">
     <div class="form-group row">
-        <form:label path="name" for="inputName" class="col-sm-2 col-form-label">Name</form:label>
+        <label class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-4">
+            <h2>Welcome, Enter The Employee Details</h2>
+        </div>
+    </div>
+    <div class="form-group row">
+        <form:label path="name" for="inputName" style="text-align: right;" class="col-sm-2 col-form-label">Name</form:label>
         <div class="col-sm-4">
             <form:input type="text" class="form-control" path="name" id="inputName" placeholder="Enter Name"/>
         </div>
     </div>
     <div class="form-group row">
-        <form:label path="id" for="inputId" class="col-sm-2 col-form-label">Id</form:label>
+        <form:label path="id" for="inputId" style="text-align: right;" class="col-sm-2 col-form-label">Id</form:label>
         <div class="col-sm-2">
             <form:input type="number" class="form-control" path="id" id="inputId" placeholder="Enter Id"/>
         </div>
     </div>
     <div class="form-group row">
-        <form:label path="contactNumber" for="inputContactNumber" class="col-sm-2 col-form-label">Contact Number</form:label>
+        <form:label path="contactNumber" for="inputContactNumber" style="text-align: right;" class="col-sm-2 col-form-label">Contact Number</form:label>
         <div class="col-sm-4">
             <form:input type="text" class="form-control" path="contactNumber" id="inputContactNumber" placeholder="Enter Contact Number"/>
         </div>
     </div>
     <div class="form-group row">
-        <div class="col-sm-10">
+        <label class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-4">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
