@@ -1,9 +1,15 @@
 package org.forms_in_spring_mvc.domain;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class Employee {
 
+    @NotEmpty
     private String name;
     private long id;
+    @NotEmpty
+    @Size(min = 9, max = 9)
     private String contactNumber;
 
     public String getName() {
