@@ -50,7 +50,7 @@ public class EmployeeController {
     @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
     public String submit(@Valid @ModelAttribute("employee") Employee employee, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
-            return "error";
+            return "employeeHome";
         }
         model.addAttribute("name", employee.getName());
         model.addAttribute("contactNumber", employee.getContactNumber());

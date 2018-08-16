@@ -1,25 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Form Example - Register an Employee</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        body { margin: 10px;}
+        .error { color: red; font-size: smaller}
+    </style>
 </head>
 <body style="margin: 10px;">
 <form:form method="POST" action="${pageContext.request.contextPath}/addEmployee" modelAttribute="employee">
     <div class="form-group row">
         <label class="col-sm-2 col-form-label"></label>
         <div class="col-sm-4">
-            <h2>Welcome, Enter The Employee Details</h2>
+            <h2>Welcome, enter the employee details</h2>
         </div>
     </div>
     <div class="form-group row">
         <form:label path="name" for="inputName" style="text-align: right;" class="col-sm-2 col-form-label">Name</form:label>
         <div class="col-sm-4">
             <form:input type="text" class="form-control" path="name" id="inputName" placeholder="Enter Name"/>
+            <form:errors path="name" cssClass="error"/>
         </div>
     </div>
     <div class="form-group row">
@@ -32,6 +37,7 @@
         <form:label path="contactNumber" for="inputContactNumber" style="text-align: right;" class="col-sm-2 col-form-label">Contact Number</form:label>
         <div class="col-sm-4">
             <form:input type="text" class="form-control" path="contactNumber" id="inputContactNumber" placeholder="Enter Contact Number"/>
+            <form:errors path="contactNumber" cssClass="error"/>
         </div>
     </div>
     <div class="form-group row">
