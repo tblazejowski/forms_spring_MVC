@@ -26,20 +26,13 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = "/employee/{Id}", method = RequestMethod.GET)
-    public @ResponseBody Employee getEmployeeById(@PathVariable final long Id) {
+    public @ResponseBody
+    Employee getEmployeeById(@PathVariable final long Id) {
         return employeeMap.get(Id);
     }
 
-    /*@RequestMapping(value = "/getEmployee", method = RequestMethod.GET)
-    public @ResponseBody List<Employee> getEmployee() {
-        employeeList = employeeMap.values()
-                .stream()
-                .collect(Collectors.toList());
-        return employeeList;
-    }*/
-
     @RequestMapping(value = "/getEmployee", method = RequestMethod.GET)
-    public String getEmployee (Model model){
+    public String getEmployee(Model model) {
         List<Employee> employeeList = employeeMap.values()
                 .stream()
                 .collect(Collectors.toList());
@@ -49,7 +42,12 @@ public class EmployeeController {
 
     @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
     public String submit(@Valid @ModelAttribute("employee") Employee employee, BindingResult result, ModelMap model) {
-        if (result.hasErrors()) {
+        if (result.hasErrors() || employeeMap.containsKey(employee.getId())) {
+            if (employeeMap.containsKey(employee.getId())) {
+                model.addAttribute("message", "ID already exists!");
+            }
+            model.addAttribute("name", employee.getName());
+            model.addAttribute("contactNumber", employee.getContactNumber());
             return "employeeHome";
         }
         model.addAttribute("name", employee.getName());

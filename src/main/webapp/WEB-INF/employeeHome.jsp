@@ -31,10 +31,10 @@
         <form:label path="id" for="inputId" style="text-align: right;" class="col-sm-2 col-form-label">Id</form:label>
         <div class="col-sm-2">
             <form:input type="number" class="form-control" path="id" id="inputId" placeholder="Enter Id"/>
+            <span class="error">${message}</span>
         </div>
     </div>
-    <div class="form-group row">
-        <form:label path="contactNumber" for="inputContactNumber" style="text-align: right;" class="col-sm-2 col-form-label">Contact Number</form:label>
+    <div class="form-group row">        <form:label path="contactNumber" for="inputContactNumber" style="text-align: right;" class="col-sm-2 col-form-label">Contact Number</form:label>
         <div class="col-sm-4">
             <form:input type="text" class="form-control" path="contactNumber" id="inputContactNumber" placeholder="Enter Contact Number"/>
             <form:errors path="contactNumber" cssClass="error"/>
