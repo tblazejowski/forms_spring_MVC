@@ -7,7 +7,6 @@ import javax.validation.constraints.Size;
 
 public class Employee {
 
-
     @NotEmpty
     @Pattern(regexp = "[ \\p{Space}|\\p{L}]+", message = "letters or spaces are only allowed")
     private String name;
