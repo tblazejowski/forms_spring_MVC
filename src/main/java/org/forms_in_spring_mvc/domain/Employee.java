@@ -2,6 +2,7 @@ package org.forms_in_spring_mvc.domain;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -10,6 +11,7 @@ public class Employee {
     @NotEmpty
     @Pattern(regexp = "[ \\p{Space}|\\p{L}]+", message = "letters or spaces are only allowed")
     private String name;
+    @Min(value = 0L, message = "ID value must be positive")
     private long id;
     @NotEmpty
     @Pattern(regexp = "\\p{Digit}+", message = "only digits are allowed")

@@ -31,6 +31,7 @@
         <form:label path="id" for="inputId" style="text-align: right;" class="col-sm-2 col-form-label">Id</form:label>
         <div class="col-sm-2">
             <form:input type="number" class="form-control" path="id" id="inputId" placeholder="Enter Id"/>
+            <form:errors path="id" cssClass="error"/>
             <span class="error">${message}</span>
         </div>
     </div>
