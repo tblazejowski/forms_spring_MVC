@@ -1,6 +1,6 @@
 FROM tomcat:9
 
-MAINTAINER falcor <tomasz.blazejowski@unit8.co>
+MAINTAINER falcor <tomasz.blazejowski@gmail.com>
 
 ENV ENVIRONMENT=production
 
